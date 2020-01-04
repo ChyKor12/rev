@@ -1,5 +1,5 @@
 ---
-typora-root-url: img
+
 ---
 
 # [WriteUp]Reversing.Kr - Easy Crack
@@ -10,11 +10,11 @@ typora-root-url: img
 
 Easy_CrackMe.exe를 실행하면 다음과 같은 창이 뜬다.
 
-![Easy CrackMe](/Easy CrackMe.png)
+![](\img\Easy CrackMe.png)
 
 아무거나 입력하고 확인을 눌러 보자.
 
-![Incorrect Password](/Incorrect Password.png)
+![](./image/Incorrect Password.png)
 
 "Incorrect Password"라는 메시지가 뜬다. 아마도 이 패스워드를 맞추는 문제인 것 같다.
 
