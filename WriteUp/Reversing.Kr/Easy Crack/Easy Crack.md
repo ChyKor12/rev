@@ -1,5 +1,5 @@
 ---
-
+typora-root-url: img
 ---
 
 # [WriteUp]Reversing.Kr - Easy Crack
@@ -10,11 +10,11 @@
 
 Easy_CrackMe.exe를 실행하면 다음과 같은 창이 뜬다.
 
-![](\img\Easy CrackMe.png)
+![](/Easy CrackMe.png)
 
 아무거나 입력하고 확인을 눌러 보자.
 
-![](./image/Incorrect Password.png)
+![](/Incorrect Password.png)
 
 "Incorrect Password"라는 메시지가 뜬다. 아마도 이 패스워드를 맞추는 문제인 것 같다.
 
@@ -22,15 +22,15 @@ Easy_CrackMe.exe를 실행하면 다음과 같은 창이 뜬다.
 
 OllyDbg에서 어셈블리 코드 영역에서 오른쪽 마우스 클릭을 하고, Search for → All referenced text strings를 선택해서 "Incorrect Password"라는 문자열이 함수의 인자로 쓰이는 부분이 어디인지 찾아보자.
 
-![Search for referenced strings](/Search for referenced strings.png)
+![](/Search for referenced strings.png)
 
 저 줄을 더블클릭해서 해당 주소로 가 보면, 다음과 같은 상태이다.
 
-![Jumps from](/Jumps from.png)
+![](/Jumps from.png)
 
 "Incorrect Password"라는 문자열이 사용되는 코드의 두 줄 위를 보면 "Jumps from 004010B5, 004010CD, 0040110B, 00401112"라고 되어 있다. 즉, 현재 커서가 가리키고 있는 00401135라는 주소로 점프하는 코드가 저렇게 네 군데에 있다는 것이다. 그리고 살짝 위로 올려 보면 다음과 같은 코드도 있다.
 
-![Congratulation code](/Congratulation code.png)
+![](/Congratulation code.png)
 
 점프하는 코드가 있으면 그 앞에는 비교하는 코드, 즉 조건문도 있을 것이다. 입력값을 잘 조정해서 네 개의 조건문들을 모두 통과하면 "Congratulation !!"이라는 메시지를 볼 수 있을 것이다.
 
