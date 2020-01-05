@@ -1,7 +1,3 @@
----
-typora-root-url: img
----
-
 # [WriteUp]Reversing.Kr - Easy Keygen
 
 :black_nib:ChyKor12(sjjo0225@gmail.com)
