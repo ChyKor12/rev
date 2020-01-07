@@ -1,7 +1,3 @@
----
-typora-root-url: img
----
-
 # [WriteUp]Reversing.Kr - Easy Unpack
 
 :black_nib:ChyKor12(sjjo0225@gmail.com)
@@ -24,31 +20,31 @@ ReadMe.txt에는 "Find the OEP"라고 써 있다.
 
 ---
 
-![Entry Point Alert](/Entry Point Alert.png)
+![Entry Point Alert](https://user-images.githubusercontent.com/57470479/71912471-ea210f00-31b8-11ea-8d6f-fd522facaa68.png)
 
 OllyDbg로 파일을 열면 이런 경고 메시지가 뜬다. entry point가 코드의 바깥쪽에 있음을 감지하고, 코드가 변조되었음을 경고하는 메시지이다. 확인을 누르자.
 
-![Entry Point](/Entry Point.png)
+![Entry Point](https://user-images.githubusercontent.com/57470479/71912472-ea210f00-31b8-11ea-8a0a-0df377d9840e.png)
 
 Entry Point로 표시되어 있는 부분이다. 스크롤을 내리다 보면 다음과 같은 코드가 나온다.
 
-![jmp 401150](/jmp 401150.png)
+![jmp 401150](https://user-images.githubusercontent.com/57470479/71912463-e8efe200-31b8-11ea-936f-46eb660a68f9.png)
 
 401150으로 점프하는 코드가 있고 그 뒤는 모두 NULL로 채워져 있다. 오른쪽 마우스 클릭 - Go to - Expression에서 401150을 입력해서 코드를 보면 다음과 같다.
 
-![401150](/401150.png)
+![401150](https://user-images.githubusercontent.com/57470479/71912465-e9887880-31b8-11ea-807b-141013e73ead.png)
 
 실행은 되어야 하는데 어셈블리 코드의 형태가 아니다.
 
 40A1FB에 break point를 걸어 보자.
 
-![Suspicious breakpoint](/Suspicious breakpoint.png)
+![Suspicious breakpoint](https://user-images.githubusercontent.com/57470479/71912464-e8efe200-31b8-11ea-9f0e-523301d8df3c.png)
 
 code section의 바깥쪽에 break point를 걸려고 한다는 경고 메시지가 뜬다. 예를 누르자.
 
 실행시키고, break point에서 멈추면 F8을 눌러서 401150으로 점프시키자. 그리고 나서 오른쪽 마우스 클릭 - Analysis - Analyse code(Ctrl+a)를 클릭해 보자.
 
-![Decode code](/Decode code.png)
+![Decode code](https://user-images.githubusercontent.com/57470479/71912467-e9887880-31b8-11ea-8111-fcab59b1bc19.png)
 
 실행 가능한 정상적인 코드로 바뀌었음을 확인할 수 있다. 실제 Entry Point는 401150이 된다.![auth](/auth.png)
 
