@@ -46,7 +46,9 @@ code section의 바깥쪽에 break point를 걸려고 한다는 경고 메시지
 
 ![Decode code](https://user-images.githubusercontent.com/57470479/71912467-e9887880-31b8-11ea-8111-fcab59b1bc19.png)
 
-실행 가능한 정상적인 코드로 바뀌었음을 확인할 수 있다. 실제 Entry Point는 401150이 된다.![auth](/auth.png)
+실행 가능한 정상적인 코드로 바뀌었음을 확인할 수 있다. 실제 Entry Point는 401150이 된다.
+
+![auth](https://user-images.githubusercontent.com/57470479/71912466-e9887880-31b8-11ea-9e0e-0798bb09f90e.png)
 
 ---
 
